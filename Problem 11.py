@@ -39,3 +39,18 @@ def vertCheck(vert): # returns maximum product of all vectors in a list of vecto
             M = t
     return M
 print(vertCheck(vert)) # print maximum vertical list of sList
+
+horz = []
+for i in range(20):
+    for x in range(20 - 3):
+        horz = horz + [[sList[i][j + x] for j in range(4)]]
+# print(horz)
+def horzCheck(horz):
+    L = len(horz)
+    M = 0
+    for i in range(L):
+        t = productFour(horz[i])
+        if t > M:
+            M = t
+    return M
+print(horzCheck(horz))
